@@ -12,11 +12,18 @@ public class DnsResolverConfiguration implements PluginConfigBean {
     @Parameter(value = "dns_resolver_run_before_extractors")
     private boolean runBeforeExtractors = true;
 
+    @Parameter(value = "dns_resolver_enabled")
+    private boolean enabled = false;
+
     public boolean isRunBeforeExtractors() {
         return runBeforeExtractors;
     }
 
     public Period getResolverTimeout() {
         return resolverTimeout;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
     }
 }
