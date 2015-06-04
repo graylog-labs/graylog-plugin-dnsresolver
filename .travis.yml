@@ -1,0 +1,21 @@
+language: java
+jdk:
+  - oraclejdk7
+  - oraclejdk8
+before_deploy:
+  - mvn jdeb:jdeb && export RELEASE_DEB_FILE=$(ls target/*.deb)
+  - mvn rpm:rpm && export RELEASE_RPM_FILE=$(ls target/rpm/graylog-plugin-filter-dnsresolver/RPMS/noarch/graylog-plugin-filter-dnsresolver-*.rpm)
+  - export RELEASE_PKG_FILE=$(ls target/graylog-plugin-filter-dnsresolver-*.jar)
+  - echo "Deploying release to GitHub releases"
+deploy:
+  provider: releases
+  api_key:
+    secure: "gAbom0CaXSjhTs8UjdN3cqiCfe4FCdEwgAqaPnk8yFzTkuTCllF1wupin2ZLLftQzCDSxkFON1Ak2MElyjJ0aBcpBGXxUSGnc1v4NGSXwuvL1SZpU39IVvUuu923alwUWujBXxHMt13zdJ8jYAOMKyYoJfa3IBsEDKCLBTgk5k4="
+  file: 
+    - "${RELEASE_PKG_FILE}"
+    - "${RELEASE_DEB_FILE}"
+    - "${RELEASE_RPM_FILE}"
+  skip_cleanup: true
+  on:
+    tags: true
+    jdk: oraclejdk7
