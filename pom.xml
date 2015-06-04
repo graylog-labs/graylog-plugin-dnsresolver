@@ -6,7 +6,7 @@
 
     <groupId>org.graylog</groupId>
     <artifactId>graylog-plugin-filter-dnsresolver</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
@@ -22,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <graylog2.version>1.0.0-rc.3</graylog2.version>
+        <graylog2.version>1.0.2</graylog2.version>
         <graylog2.plugin-dir>/usr/share/graylog2-server/plugin</graylog2.plugin-dir>
     </properties>
 
