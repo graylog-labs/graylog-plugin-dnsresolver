@@ -1,6 +1,8 @@
 DNS Resolver Plugin for Graylog
 ===============================
 
+[![Build Status](https://travis-ci.org/Graylog2/graylog-plugin-dnsresolver.svg)](https://travis-ci.org/Graylog2/graylog-plugin-dnsresolver)
+
 This message filter plugin can be used to do DNS lookups for the `source` field in Graylog messages.
 
 **Required Graylog version:** 1.1 and later
