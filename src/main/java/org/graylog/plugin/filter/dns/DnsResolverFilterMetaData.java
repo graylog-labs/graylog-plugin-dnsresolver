@@ -49,7 +49,7 @@ public class DnsResolverFilterMetaData implements PluginMetaData {
 
     @Override
     public Version getVersion() {
-        return new Version(1, 2, 0, "SNAPSHOT");
+        return new Version(1, 1, 3, "nt1");
     }
 
     @Override

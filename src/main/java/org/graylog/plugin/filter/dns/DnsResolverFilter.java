@@ -60,7 +60,7 @@ public class DnsResolverFilter implements MessageFilter {
         this.shouldRunBeforeExtractors = shouldRunBeforeExtractors;
         this.enabled = enabled;
         timeout = resolverTimeout.toStandardDuration().getMillis();
-        timeLimiter = new SimpleTimeLimiter(
+        timeLimiter = SimpleTimeLimiter.create(
                 Executors.newSingleThreadExecutor(
                         new ThreadFactoryBuilder()
                                 .setDaemon(true)
@@ -81,7 +81,7 @@ public class DnsResolverFilter implements MessageFilter {
         final String source = msg.getSource();
         try {
             try (Timer.Context ignored = resolveTime.time()) {
-                final String hostname = timeLimiter.callWithTimeout(getLookupCallable(source), timeout, TimeUnit.MILLISECONDS, true);
+                final String hostname = timeLimiter.callWithTimeout(getLookupCallable(source), timeout, TimeUnit.MILLISECONDS);
 
                 if (hostname != null) {
                     msg.setSource(hostname);
