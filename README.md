@@ -28,7 +28,7 @@ The following configuration options can be added to the Graylog configuration fi
 
 ## Build
 
-This project is using Maven and requires Java 7 or higher.
+This project is using Maven and requires Java 8 or higher.
 
 You can build a plugin (JAR) with `mvn package`.
 
