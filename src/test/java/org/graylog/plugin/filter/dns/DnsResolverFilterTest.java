@@ -8,6 +8,9 @@ import org.joda.time.Period;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
@@ -47,12 +50,13 @@ public class DnsResolverFilterTest {
                                                                  true,
                                                                  metricRegistry);
 
+        final InetAddress loopbackAddress = Inet4Address.getLoopbackAddress();
         final Message msg = new Message("test", "127.0.0.1", Tools.nowUTC());
         final boolean filter = resolver.filter(msg);
 
         assertFalse("Message should not be filtered out", filter);
 
-        assertEquals("localhost ip should be resolved, filter is enabled", "localhost", msg.getSource());
+        assertEquals("localhost ip should be resolved, filter is enabled", loopbackAddress.getCanonicalHostName(), msg.getSource());
 
         assertEquals("should have looked up one time", 1, metricRegistry.timer(name(DnsResolverFilter.class, "resolveTime")).getCount());
 
