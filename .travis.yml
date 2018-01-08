@@ -15,7 +15,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: MW9KC7aQBizwTLp09WqCp49FhlZKXyctpyzDemklr5BWPHFJ/hP+wyaDcpyctu9mPPIrpzYgIWDdIa4vDvJFj15YWuR1W8ngtX/T9iU7743TB3yUB7otZCdA6Zoba9J8Lq64J5T6HuO6ou/LL2MFUQOgpgUkLUWwT9y1NSoLrbI=
+    secure: "IltfQr/7O90BCKlujv2YZ/UPtbPxkDjrfwaRDKYzKtFcRe4zead2cCHOS6pFkkTiJupzxmiX8U0CvwvfX160k/JMaxR+VN7QmT49UCPgxg3GsCtHrmCjAI4jx+DrIyuJGv94uE9mdC4TEAoLlsB0OyFwSIZQqE2DapDPkzEXzPY="
   file: 
     - "${RELEASE_PKG_FILE}"
     - "${RELEASE_DEB_FILE}"
@@ -24,3 +24,4 @@ deploy:
   on:
     tags: true
     jdk: oraclejdk8
+    repo: graylog-labs/graylog-plugin-dnsresolver
