@@ -1,7 +1,7 @@
 DNS Resolver Plugin for Graylog
 ===============================
 
-[![Build Status](https://travis-ci.org/Graylog2/graylog-plugin-dnsresolver.svg)](https://travis-ci.org/Graylog2/graylog-plugin-dnsresolver)
+[![Build Status](https://travis-ci.org/graylog-labs/graylog-plugin-dnsresolver.svg)](https://travis-ci.org/graylog-labs/graylog-plugin-dnsresolver)
 
 This message filter plugin can be used to do DNS lookups for the `source` field in Graylog messages.
 
@@ -11,7 +11,7 @@ Please use version 1.1.2 of this plugin if you are still running Graylog 1.x
 
 ## Installation
 
-[Download the plugin](https://github.com/Graylog2/graylog-plugin-dnsresolver/releases)
+[Download the plugin](https://github.com/graylog-labs/graylog-plugin-dnsresolver/releases)
 and place the `.jar` file in your Graylog plugin directory. The plugin directory
 is the `plugins/` folder relative from your `graylog-server` directory by default
 and can be configured in your `graylog.conf` file.
